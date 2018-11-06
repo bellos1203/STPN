@@ -1,16 +1,15 @@
-STPN - Weakly Supervised Action Localization by Sparse Temporal Pooling Network
-===============================================================================
+STPN - Weakly Supervised Action Localization by Sparse Temporal Pooling Network (reproduced)
+============================================================================================
 Overview
 --------
 
-This repository contains a reproduced code for the paper __"Weakly Supervised Action Localization by Sparse Temporal Pooling Network"__ by Phuc Nguyen, Ting Liu, Gautam Prasad and Bohyung Han, __CVPR 2018__.
-<https://arxiv.org/abs/1712.05080>
+This repository contains a reproduced code for the paper [__"Weakly Supervised Action Localization by Sparse Temporal Pooling Network"__](https://arxiv.org/abs/1712.05080) by Phuc Nguyen, Ting Liu, Gautam Prasad and Bohyung Han, __CVPR 2018__.
 
 Please note that this is **not** an official repo.
 
 Usage Guide
 ===========
-* Please note that I used the TITAN X GPU for the implementation. 
+* Hardware : TITAN X GPU 
 
 0.Requirements
 --------------
@@ -31,7 +30,7 @@ Usage Guide
 4) Save the rgb frames to [train_data/rgb] and the flow frames to [train_data/flows] with the name of [vid_num/{:06d}.png]. (test_data/rgb, test_data/flows for the case of test data)
    I simply save the videos as 1,2,3,....200 for the convenience.
 
-Please refer the STPN paper or the I3D paper for more details about preprocessing step.
+* Please refer the STPN paper or the I3D paper for more details about preprocessing step.
 
 5) Extract the feature vector of each video by using the code in the "feature_extraction" folder. The extracted features will be saved in the [train/test]_data/[rgb/flow]_features.
    Since I use the TITAN X GPU which has 12GB Memory, I extract the feature from 16*100 frames which means 100 segments at each time. If you have the GPU with smaller memory, you should extract the feature with the reduced number of segments.
@@ -39,16 +38,20 @@ Please refer the STPN paper or the I3D paper for more details about preprocessin
 
 2.Train the Model
 -----------------
-* Run the "train.sh" code. Please refer the "train.sh" for more details.
+* Run the "train.sh" code. 
+* Please refer the "train.sh" for more details.
 
 3.Test and Extract the Result
 -----------------------------
-* Run the "test.sh" code. Please refer the "test.sh" for more details. 
-  Please note that I excluded two falsely annotated videos, 270, 1496, following the [SSN paper](https://arxiv.org/pdf/1704.06228.pdf)
+* Run the "test.sh" code. 
+* Please refer the "test.sh" for more details. 
+* Note that I excluded two falsely annotated videos, 270, 1496, following the [SSN paper](https://arxiv.org/pdf/1704.06228.pdf).
 
 4.Evaluate
 ----------
-* Run the "eval.sh" code. Please refer the "eval.sh" for mode details. I used the evaluation code from the official [ActivityNet repo](https://github.com/activitynet/ActivityNet), as the authors did.
+* Run the "eval.sh" code. 
+* Please refer the "eval.sh" for mode details. 
+* I used the evaluation code from the official [ActivityNet repo](https://github.com/activitynet/ActivityNet), as the authors did.
 
 Reproduced Result
 =================
@@ -60,4 +63,9 @@ With the provided sample checkpoint(files in the code/ckpt/ckpt001), I got the f
 | Reproduced |52.1|44.2|34.7|26.1|17.7|10.1| 4.9| 1.3| 0.1|21.3|
 
 Please note that the best result appears around 22k ~ 25k and sometimes the performance could be slightly different from the numbers above.
+
+Comments
+--------
+
+If you have any questions or comments, please contact me. <bellos1203@snu.ac.kr>
 
