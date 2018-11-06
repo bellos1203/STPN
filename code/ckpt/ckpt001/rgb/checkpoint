@@ -1,0 +1,2 @@
+model_checkpoint_path: "rgb_23900"
+all_model_checkpoint_paths: "rgb_23900"
