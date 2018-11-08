@@ -79,3 +79,5 @@ def train(sess, model, input_list, stream, train_iter):
 
                 saver.save(sess, os.path.join(ckpt[stream], '{:s}_{:d}'.format(stream, step)))
                 print('Checkpoint {:d} Saved'.format(step))
+    f.close()
+

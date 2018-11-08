@@ -30,7 +30,7 @@ Usage Guide
 4) Save the rgb frames to `train_data/rgb` and the flow frames to `train_data/flows` with the name of `vid_num/{:06d}.png`. (`test_data/rgb`, `test_data/flows` for the case of test data)
    I simply save the videos as 1,2,3,....200 for the convenience.
 
-* Please refer the [STPN paper](https://arxiv.org/abs/1712.05080) or the [I3D paper](https://arxiv.org/abs/1705.07750) for more details about preprocessing step.
+* Please refer to the [STPN paper](https://arxiv.org/abs/1712.05080) or the [I3D paper](https://arxiv.org/abs/1705.07750) for more details about preprocessing step.
 
 5) Extract the feature vector of each video by using the code in the "`feature_extraction`" folder. The extracted features will be saved in the `[train/test]_data/[rgb/flow]_features`.
    Since I use the TITAN X GPU which has 12GB Memory, I extract the feature from 16*100 frames which means 100 segments at each time. If you have the GPU with smaller memory, you should extract the feature with the reduced number of segments.
@@ -55,7 +55,7 @@ Usage Guide
 
 Reproduced Result
 =================
-With the provided sample checkpoint(files in the code/ckpt/ckpt001), I got the following result for the THUMOS14 test set, which is similar to the paper.
+With the provided sample checkpoint(files in the `code/ckpt/ckpt001`), I got the following result for the THUMOS14 test set, which is similar to the paper.
 
 |    tIoU    | 0.1| 0.2| 0.3| 0.4| 0.5| 0.6| 0.7| 0.8| 0.9| mAP|
 |------------|----|----|----|----|----|----|----|----|----|----|
