@@ -5,7 +5,6 @@ Overview
 
 This repository contains a reproduced code for the paper [__"Weakly Supervised Action Localization by Sparse Temporal Pooling Network"__](https://arxiv.org/abs/1712.05080) by Phuc Nguyen, Ting Liu, Gautam Prasad, and Bohyung Han, __CVPR 2018__.
 
-Please note that this is **not** an official repo.
 
 Usage Guide
 ===========
