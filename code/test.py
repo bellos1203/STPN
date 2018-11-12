@@ -127,4 +127,10 @@ def test(sess, model, init, input_list, test_iter):
     with open(json_path, 'w') as fp:
         json.dump(final_result, fp)
 
+
+    txt_path = os.path.join(ckpt['path'], 'results.txt')
+    with open(txt_path, 'w') as tp:
+        utils.json2txt(final_result['results'], tp)
+
+
     test_vid_list.close()

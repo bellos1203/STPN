@@ -28,6 +28,9 @@ NUM_CLASS = 20
 CLASS = {0: 'BaseballPitch', 1: 'BasketballDunk', 2: 'Billiards', 3: 'CleanAndJerk', 4: 'CliffDiving', 5: 'CricketBowling', 6: 'CricketShot', 7: 'Diving', 8: 'FrisbeeCatch', 9: 'GolfSwing',
          10: 'HammerThrow', 11: 'HighJump', 12: 'JavelinThrow', 13: 'LongJump', 14: 'PoleVault', 15: 'Shotput', 16: 'SoccerPenalty', 17: 'TennisSwing', 18: 'ThrowDiscus', 19: 'VolleyballSpiking'}
 
+CLASS_INDEX = {'BaseballPitch': '7', 'BasketballDunk': '9', 'Billiards': '12', 'CleanAndJerk': '21', 'CliffDiving': '22', 'CricketBowling': '23', 'CricketShot': '24', 'Diving': '26', 'FrisbeeCatch': '31', 'GolfSwing': '33',
+         'HammerThrow': '36', 'HighJump': '40', 'JavelinThrow': '45', 'LongJump': '51', 'PoleVault': '68', 'Shotput': '79', 'SoccerPenalty': '85', 'TennisSwing': '92', 'ThrowDiscus': '93', 'VolleyballSpiking': '97'}
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -246,3 +249,12 @@ def result2json(result):
                     'segment': [result[i][j][2], result[i][j][3]]}
             result_file.append(line)
     return result_file
+
+
+def json2txt(jF, rF):
+    for i in jF.keys():
+        for j in range(len(jF[i])):
+            rF.write('{:s} {:f} {:f} {:s} {:f}\n'.format(i, jF[i][j]['segment'][0], jF[i][j]['segment'][1],
+                                                        CLASS_INDEX[jF[i][j]['label']], round(jF[i][j]['score'], 6)))
+
+
