@@ -74,4 +74,4 @@ This work was supported by Institute for Information & communications Technology
 
 License
 -------
-
+Apache-2.0
