@@ -84,6 +84,8 @@ for i in range(1, NUM_VIDEOS[data] + 1):
     for j in range(num_hundred_segments + 1):
         if j == num_hundred_segments:
             extract_size = num_segments - num_hundred_segments * 100
+            if extract_size == 0:
+                continue
         else:
             extract_size = 100
 
